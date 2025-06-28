@@ -8,7 +8,7 @@ const app = require('../app');
 const debug = require('debug')('nucampsiteserver:server');
 const http = require('http');
 
-const https = require ('https');
+const https = require('https');
 const fs = require('fs');
 
 /**
