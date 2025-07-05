@@ -64,20 +64,20 @@ router.get('/facebook/token', passport.authenticate('facebook-token', { session:
     }
 });
 
-router.get('/logout', cors.corsWithOptions, (req, res, next) => {  
-    if (req.session && req.session.user) {  // Check for a specific user property
-        req.session.destroy((err) => {
-            if (err) {
-                return next(err);
-            }
-            res.clearCookie('session-id');
-            res.redirect('/');
-        });
-    } else {  
-        const err = new Error('You are not logged in!');
-        err.status = 401;
-        return next(err);
-    }  
-});
+// router.get('/logout', cors.corsWithOptions, (req, res, next) => {  
+//     if (req.session && req.session.user) {  // Check for a specific user property
+//         req.session.destroy((err) => {
+//             if (err) {
+//                 return next(err);
+//             }
+//             res.clearCookie('session-id');
+//             res.redirect('/');
+//         });
+//     } else {  
+//         const err = new Error('You are not logged in!');
+//         err.status = 401;
+//         return next(err);
+//     }  
+// });
 
 module.exports = router;
